@@ -1,6 +1,11 @@
+<div class="container">
   <h1> 🍸 List of All Cocktails 🍸 </h1>
-      <ul style="list-style: none;">
-        <% @cocktails.each do |cocktail| %>
-          <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-        <% end %>
-      </ul>
+
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/345760/1600x900")>
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: 'title-link' %></h2>
+        </div>
+      <% end %>
+    </div>
+</div>
