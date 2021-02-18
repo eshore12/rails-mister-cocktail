@@ -1,0 +1,6 @@
+  <h1> 🍸 List of All Cocktails 🍸 </h1>
+      <ul style="list-style: none;">
+        <% @cocktails.each do |cocktail| %>
+          <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+        <% end %>
+      </ul>

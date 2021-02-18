@@ -1,0 +1,15 @@
+<h1>Cocktail Show Page</h1>
+
+<% @cocktail.doses.each do |dose| %>
+<p><%= dose.ingredient.name %></p>
+<p><%= dose.description %></p>
+<% end %>
+
+<div class="text-center">
+  <button type="button" class="btn btn-outline-primary"> <%= link_to "👈 Back to Cocktails List", cocktails_path, class: 'btn-title' %></button>
+</div>
+
+
+<div class="text-center">
+  <button type="button" class="btn btn-outline-primary"> <%= link_to "✍️ Add a Dose", new_cocktail_dose_path(@cocktail), class: 'btn-title' %></button>
+</div>
