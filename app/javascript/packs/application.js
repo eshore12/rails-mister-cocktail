@@ -4,6 +4,24 @@
 // that code so it'll be compiled.
 import 'bootstrap';
 
+import { loadDynamicBannerText } from '../components/banner';
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "A nice alert",
+  text: "This is a great alert, isn't it?",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#add-link');
+    link.click();
+  }
+});
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()

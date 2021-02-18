@@ -1,11 +1,25 @@
-<div class="container">
-  <h1> 🍸 List of All Cocktails 🍸 </h1>
+<div class="page">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://source.unsplash.com/9UD0JHnWyVE/1600x900);">
+    <div class="container">
+      <h1>I Finally Opened A Bar</h1>
+        <p>
+          <span id="banner-typed-text"></span>
+        </p>
+    </div>
+    <div class="banner-button">
+    <%= link_to "View All Drinks", "#", class: "btn btn-ghost" %>
+    </div>
+  </div>
+
+<div class="all-cocktails">
+  <h1> 🍸 All Cocktails 🍸 </h1>
 
     <div class="cards">
       <% @cocktails.each do |cocktail| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/345760/1600x900")>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/771284/1600x900")>
           <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: 'title-link' %></h2>
         </div>
       <% end %>
+    </div>
     </div>
 </div>

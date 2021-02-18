@@ -1,0 +1,16 @@
+.form {
+  color: white;
+  width: 75%;
+  padding-left: 300px;
+}
+
+.form .btn-ghost-add {
+  margin-left: 250px;
+  margin-top: 30px;
+}
+
+.form .btn-ghost-add:hover {
+  opacity: 1;
+  color: black;
+  box-shadow: 0 0 45px rgba(255,255,255,255.8);
+}
