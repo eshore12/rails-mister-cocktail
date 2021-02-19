@@ -12,10 +12,6 @@
   </div>
 
     <%# <h1> 🍸 All Cocktails 🍸 </h1> %>
-    <div class="banner-button">
-    <%= link_to "Add Drink", new_cocktail_path, class: "btn btn-ghost" %>
-    </div>
-
   <div class="all-cocktails" id="all-cocktails">
       <div class="cards">
         <% @cocktails.each do |cocktail| %>
@@ -29,4 +25,9 @@
         <% end %>
       </div>
     </div>
+    <div class="add-drink-button">
+      <%= link_to "Add Drink", new_cocktail_path, class: "btn btn-ghost" %>
+    </div>
 </div>
+
+
