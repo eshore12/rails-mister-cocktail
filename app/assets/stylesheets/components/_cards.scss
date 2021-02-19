@@ -127,12 +127,15 @@
   // grid-template-columns: 1fr 1fr 1fr;
   // grid-gap: 16px;
   background-color: transparent;
-  width: 300px;
+  // width: 300px;
+  display: flex;
   height: 200px;
   border: 1px solid white;
   border-radius: 3%;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
+
+
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
@@ -173,4 +176,9 @@
   border: 1px solid white;
   border-radius: 3%;
   transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  color: black !important;
+  margin-top: 72px;
 }

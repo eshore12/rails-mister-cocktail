@@ -5,7 +5,7 @@
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
-
+<div class=cards>
   <% @cocktail.doses.each do |dose| %>
     <div class="flip-card">
       <div class="flip-card-inner">
@@ -24,6 +24,7 @@
       </div>
     </div>
   <% end %>
+  </div>
 
   <div class="banner-button">
     <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost" %>
