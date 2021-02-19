@@ -1,46 +1,32 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://source.unsplash.com/9UD0JHnWyVE/1600x900);">
-    <div class="banner-btn">
-      <%= link_to "Back to Home", cocktails_path, class: "btn btn-ghost" %>
+  <div class="banner-btn">
+    <%= link_to "Back to Home", cocktails_path(anchor: "all-cocktails"), class: "btn btn-ghost" %>
+  </div>
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+
+  <% @cocktail.doses.each do |dose| %>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <% if @cocktail.photo.attached? %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
+            <% else %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/771284/1600x900)">
+            <% end %>
+            <h2><%= dose.ingredient.name %></h2>
+              </div>
+          </div>
+          <div class="flip-card-back">
+            <p><%= dose.description %></p>
+          </div>
+      </div>
     </div>
-      <div class="container">
-        <h1><%= @cocktail.name %></h1>
-      </div>
+  <% end %>
 
-      <div class="banner-button">
-        <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost" %>
-      </div>
-
-      <div class="card-trip">
-        <div class="card-trip-infos">
-          <% @cocktail.doses.each do |dose| %>
-            <div>
-              <h2><%= dose.ingredient.name %></h2>
-              <p><%= dose.description %></p>
-            </div>
-          <img src="https://source.unsplash.com/9UD0JHnWyVE/1600x900" alt="Image of drink" class="card-trip-user avatar-bordered" />
-        </div>
-        <% end %>
-      </div>
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://source.unsplash.com/9UD0JHnWyVE/1600x900" alt="Image of drink">
-    <div class="card-body">
-      <% @cocktail.doses.each do |dose| %>
-        <p class="card-text"><%= dose.ingredient.name %></p>
-        <p class="card-text"><%= dose.description %></p>
-    </div>
-<%= link_to 'Delete Dose', dose_path(dose), method: :delete, data: { confirm: "You sure, dude?" } %>
-<% end %>
+  <div class="banner-button">
+    <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost" %>
+  </div>
 </div>
 
-
-<div class="buttons">
-<div class="text-center">
-  <button type="button" class="btn btn-outline-primary"> <%= link_to "👈 Back to Cocktails List", cocktails_path, class: 'btn-title' %></button>
-</div>
-
-
-<div class="text-center">
-  <button type="button" class="btn btn-outline-primary"> <%= link_to "✍️ Add a Dose", new_cocktail_dose_path(@cocktail), class: 'btn-title' %></button>
-</div>
-</div>

@@ -1,0 +1,52 @@
+
+<% if @cocktail.photo.attached? %>
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+      <%= cl_image_tag("pd9mitueqmlqdtubccau", width: 400, height: 300, crop: :fill) %>
+      <% end %>
+
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <% @cocktail.doses.each do |dose| %>
+            <div>
+              <h2><%= dose.ingredient.name %></h2>
+              <p><%= dose.description %></p>
+            </div>
+          <img src="https://source.unsplash.com/9UD0JHnWyVE/1600x900" alt="Image of drink" class="card-trip-user avatar-bordered" />
+        </div>
+        <% end %>
+      </div>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/9UD0JHnWyVE/1600x900" alt="Image of drink">
+    <div class="card-body">
+      <% @cocktail.doses.each do |dose| %>
+        <p class="card-text"><%= dose.ingredient.name %></p>
+        <p class="card-text"><%= dose.description %></p>
+    </div>
+<%= link_to 'Delete Dose', dose_path(dose), method: :delete, data: { confirm: "You sure, dude?" } %>
+<% end %>
+</div>
+
+
+<div class="buttons">
+<div class="text-center">
+  <button type="button" class="btn btn-outline-primary"> <%= link_to "👈 Back to Cocktails List", cocktails_path, class: 'btn-title' %></button>
+</div>
+
+
+<div class="text-center">
+  <button type="button" class="btn btn-outline-primary"> <%= link_to "✍️ Add a Dose", new_cocktail_dose_path(@cocktail), class: 'btn-title' %></button>
+</div>
+</div>
+
+
+
+
+<!-- app/views/articles/index.html.erb -->
+<%= cl_image_tag("pd9mitueqmlqdtubccau",
+      width: 400, height: 300, crop: :fill) %>
+
+<!-- for face detection -->
+<%= cl_image_tag("yeit7lc4uxdlsrassvh3",
+      width: 150, height: 150, crop: :thumb) %>
