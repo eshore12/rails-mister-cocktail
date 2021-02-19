@@ -1,3 +1,21 @@
+// .card-category {
+//   background-size: cover;
+//   background-position: center;
+//   height: 180px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   &:hover {
+//      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+//    }
+// }
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -10,9 +28,9 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
   &:hover {
-     box-shadow: 0 0 30px rgba(0,0,0,0.8);
+     box-shadow: 0 0 15px rgba(0,0,0,0.2);
    }
 }
 
@@ -135,8 +153,6 @@
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-
-
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
@@ -181,4 +197,48 @@
 .flip-card-back p {
   color: black !important;
   margin-top: 72px;
+}
+
+.card-remove-link {
+  color: #3E4038;
+  border-radius: 50%;
+  border: 1px #3E4038;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.7;
+  // transform: rotate(45deg);
+  font-weight: lighter;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.card-edit-link {
+  color: #3E4038;
+  border-radius: 50%;
+  border: 1px #3E4038;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  opacity: 0.7;
+  // transform: rotate(45deg);
+  font-weight: lighter;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+  }
 }
