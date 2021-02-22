@@ -1,9 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://source.unsplash.com/9UD0JHnWyVE/1600x900);">
-    <div class="banner-btn">
-      <%= link_to "Back to Home", cocktails_path(anchor: "all-cocktails"), class: "btn btn-ghost" %>
-    </div>
-      <div class="container">
-        <h1>Edit Dose</h1>
-      </div>
-
-    <%# <%= render 'new_dose/form' %>
+  <div class="banner-btn">
+    <%= link_to "Back to Home", cocktails_path(anchor: "all-cocktails"), class: "btn btn-ghost" %>
+  </div>
+  <div class="container">
+    <h1>Edit Dose</h1>
+  </div>
+  <div class="form">
+    <%= simple_form_for @dose do |f| %>
+      <%= f.association :ingredient %>
+      <%= f.input :description  %>
+      <%= f.submit "Update Dose", class: 'btn btn-ghost-add' %>
+    <% end %>
+  </div>
